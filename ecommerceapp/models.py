@@ -31,7 +31,7 @@ class product(models.Model):
     tags = models.ManyToManyField(Tag)
 
     def __str__(self):
-        return self.category
+        return self.product_name
 
 class Order(models.Model):
     STATUS = (
@@ -46,4 +46,4 @@ class Order(models.Model):
     status = models.CharField(max_length=200, null=True, choices=STATUS)
 
     def __str__(self):
-        return self.status
+        return self.product.product_name

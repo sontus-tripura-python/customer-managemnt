@@ -2,12 +2,36 @@
   margin: 0;
   padding: 0;
 }
-.boxOfStatus{
-  background: #b3b3e8;
+.bg-light{
+  background:#28a745!important;
+}
+.navsection{
+  background:#28a745!important;
+}
+.box{
+  margin-top: 5px;
+  background:#007bff;
+  padding: 5px;
+  height: 150px;
+  border-radius: 10px;
+}
+.box2{
+  margin-top: 5px;
+  background:#28a745;
+  padding: 5px;
+  height: 150px;
+  border-radius: 10px;
+}
+.box3{
+  margin-top: 5px;
+  background: red;
   padding: 5px;
   height: 150px;
   border-radius: 10px;
 }
 .bodyofhomepage{
   margin-top: 20px;
+}
+.footer{
+  background: #3fb7bd;
 }

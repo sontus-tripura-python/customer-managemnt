@@ -5,6 +5,7 @@
   <div class="card">
     <div class="card-body">
     <h2>Our Total Customers</h2>
+    <hr>
     <p>{{ total_customers }}</p>
     </div>
   </div>
@@ -12,20 +13,23 @@
 <div class="container">
 <div class="row">
   <div class="col-md-4 ">
-    <div class="text-center boxOfStatus">
+    <div class="text-center box">
       <h3>Total Orders </h3>
+      <hr>
       <p>{{ total_orders }}</p>
     </div>
   </div>
   <div class="col-md-4 ">
-    <div class="text-center boxOfStatus">
+    <div class="text-center box2">
       <h3> Total Delivered</h3>
+      <hr>
       <p>{{ deliverd }}</p>
     </div>
   </div>
   <div class="col-md-4 ">
-    <div class="text-center boxOfStatus">
+    <div class="text-center box3">
       <h3>Orders Pending </h3>
+      <hr>
       <p>{{ pending }}</p>
     </div>
   </div>
@@ -39,18 +43,17 @@
 <div class="row">
   <div class="col-md-5">
     <h2>Customers</h2>
+    <a href="#" class="btn btn-primary btn-sm btn-block"> Add Customer </a>
     <table class="table table-sm">
       <tr>
 
         <th>Customer of Name</th>
-        <th>Email</th>
           <th>Details</th>
       </tr>
 
       {% for customer in customers %}
       <tr>
         <td>{{ customer.name }}</td>
-        <td>{{ customer.email }}</td>
         <td><a href="{% url 'customers' customer.pk %}" class="btn btn-sm btn-primary">View</a></td>
       </tr>
       {% endfor %}
@@ -73,8 +76,9 @@
       <td>{{ order.product.product_name }}</td>
       <td>{{ order.date_created }}</td>
       <td>{{ order.status }}</td>
-      <td><a href="#" class="btn btn-sm btn-primary">Update</a></td>
-      <td><a href="#" class="btn btn-sm btn-danger">Delete</a></td>
+      <td><a href="{% url 'UpdateForm' order.id %}" class="btn btn-sm btn-primary">Update</a>
+      </td>
+      <td><a href="{% url 'deleteForm' order.id %}" class="btn btn-sm btn-danger">Delete</a></td>
     </tr>
     {% endfor %}
   </table>
@@ -85,4 +89,14 @@
   </div>
 
 </div>
+<hr>
+
+  <div class="card footer">
+    <div class="card-body text-center">
+      <h2>Customer Management system Web App</h2>
+      <hr>
+      <p>Developed By Sontus Tripura</p>
+    </div>
+  </div>
+
 {% endblock %}
